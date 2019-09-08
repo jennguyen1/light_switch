@@ -12,7 +12,7 @@ class lightSwitch():
         gpio.setmode(gpio.BOARD)
         self.pin = pin
         gpio.setup(self.pin, gpio.OUT)
-        self.dn = 5.5
+        self.dn = 5
         self.md = 7
         self.up = 9
         self.pwm = gpio.PWM(self.pin, 50)
