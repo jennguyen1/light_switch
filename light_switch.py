@@ -14,7 +14,7 @@ class lightSwitch():
         gpio.setup(self.pin, gpio.OUT)
         self.dn = 5.5
         self.md = 7
-        self.up = 9
+        self.up = 10.5
         self.pwm = gpio.PWM(self.pin, 50)
         self.pwm.start(self.md)
     def close(self):
