@@ -12,12 +12,13 @@ class lightSwitch():
         gpio.setmode(gpio.BOARD)
         self.pin = pin
         gpio.setup(self.pin, gpio.OUT)
-        self.dn = 5.5
+        self.dn = 5
         self.md = 7
-        self.up = 10.5
+        self.up = 10
         self.pwm = gpio.PWM(self.pin, 50)
         self.pwm.start(self.md)
     def close(self):
+        time.sleep(0.5)
         self.pwm.stop()
         gpio.cleanup()
 
@@ -40,9 +41,9 @@ class lightSwitch():
         self.__go(pos)
         self.__home()
     def on(self):
-        self.__flip_switch(self.up, shift = -1)
-        self.__flip_switch(self.up, shift = -1)
+        self.__flip_switch(self.up, shift = 0)
+        self.__flip_switch(self.up, shift = 0)
     def off(self):
-        self.__flip_switch(self.dn, shift = 1)
-        self.__flip_switch(self.dn, shift = 1)
+        self.__flip_switch(self.dn, shift = 0)
+        self.__flip_switch(self.dn, shift = 0)
 
