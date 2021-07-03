@@ -41,9 +41,9 @@ class lightSwitch():
         self.__go(pos)
         self.__home()
     def on(self):
-        self.__flip_switch(self.up, shift = 0)
-        self.__flip_switch(self.up, shift = 0)
+        self.__flip_switch(self.up, shift = -1)
+        self.__flip_switch(self.up, shift = -1)
     def off(self):
-        self.__flip_switch(self.dn, shift = 0)
-        self.__flip_switch(self.dn, shift = 0)
+        self.__flip_switch(self.dn, shift = 1)
+        self.__flip_switch(self.dn, shift = 1)
 
