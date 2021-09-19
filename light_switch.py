@@ -14,7 +14,7 @@ class lightSwitch():
         gpio.setup(self.pin, gpio.OUT)
         self.dn = 5
         self.md = 7
-        self.up = 10
+        self.up = 20
         self.pwm = gpio.PWM(self.pin, 50)
         self.pwm.start(self.md)
     def close(self):
@@ -41,9 +41,11 @@ class lightSwitch():
         self.__go(pos)
         self.__home()
     def on(self):
-        self.__flip_switch(self.up, shift = -1)
-        self.__flip_switch(self.up, shift = -1)
+        self.__go(self.dn)
+        self.__go(self.up)
+        self.__home()
     def off(self):
-        self.__flip_switch(self.dn, shift = 1)
-        self.__flip_switch(self.dn, shift = 1)
+        self.__go(self.up)
+        self.__go(self.dn)
+        self.__home()
 
